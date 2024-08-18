@@ -4,43 +4,31 @@
 <head>
     <style>
         * {
-    margin: 0;
-    padding: 0;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-html,
+        html,
         body {
             overflow-x: hidden; /* Hide horizontal scrollbar */
         }
 
-html {
-    background-image: url('./assets/po-8e7c48d1.jpg');
-}
+        html {
+            background-image: url('./assets/po-8e7c48d1.jpg');
+        }
 
-.webgl {
-    position: fixed;
-    top: 0;
-    left: 0;
-    outline: none;
-    pointer-events: none;
-}
+        .webgl {
+            position: fixed;
+            top: 0;
+            left: 0;
+            outline: none;
+            pointer-events: none;
+            width: 100vw;
+            height: 100vh;
+        }
 
-#leftie {
-    position: relative;
-    left: 400px; /* Move the div to the right by 200px */
-}
-
-#leftie2 {
-    position: relative;
-    left: 100px; /* Move the div to the right by 200px */
-}
-#con a {
-    text-transform: lowercase; /* Make the anchor tag lowercase */
-    display: block;
-    /* Move the anchor tag two lines down */
-}
-
-#about-link,
+        #about-link,
         #pro-link,
         #con-link {
             position: fixed;
@@ -52,155 +40,268 @@ html {
         }
 
         #about-link {
-            left: 20px; /* Adjusted positioning */
+            left: 20px;
         }
 
         #pro-link {
-            left: 140px; /* Adjusted positioning */
+            left: 140px;
         }
 
         #con-link {
-            left: 260px; /* Adjusted positioning */
+            left: 260px;
         }
 
         .section,
         .section1 {
             display: flex;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            position: relative;
             font-family: 'Cabin', sans-serif;
             color: #ffeded;
             text-transform: uppercase;
             font-size: 7vmin;
             padding-left: 10%;
             padding-right: 10%;
-            right:500px;
         }
 
         .section1 {
-            display: flex;
-            align-items: center;
-            height: 100vh;
-            position: relative;
-            font-family: 'Cabin', sans-serif;
-            color: #ffeded;
-            text-transform: uppercase;
-            font-size: 7vmin;
-            padding-left: 10%;
-            padding-right: 10%;
-            left: 300px; /* Removed from .section1 */
-            text-decoration: none;
+            flex-direction: column;
         }
 
-.about-section {
-    display: flex;
-    height: 100vh;
-    position: relative;
-    flex-direction: column;
-    font-family: 'Cabin', sans-serif;
-    color: #ffeded;
-    font-size: 7vmin;
-    padding: 10%;
-    width: 50vw;
-}
+        #leftie,
+        #leftie2 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-.about-section p {
-    font-size: 3vmin;
-    margin-top: 3vmin;
-}
+        #leftie a,
+        #leftie2 a {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
 
-.about-section a {
-    color: rgb(2, 71, 117);
-    text-decoration: none;
-    font-weight: bold;
-}
+        #leftie p,
+        #leftie2 p {
+            margin-left: 1rem;
+            color: white;
+            font-size: 0.8rem;
+        }
 
-.section:nth-child(odd) {
-    justify-content: flex-end;
-}
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100vh;
+            padding: 10%;
+            font-family: 'Cabin', sans-serif;
+            color: #ffeded;
+            font-size: 3vmin;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-@media (max-width: 1000px) {
-    .about-section {
-        width: 80vw;
-    }
-    .about-section p {
-        font-size: 16px;
-    }
-  }
+        .about-section h4 {
+            font-size: 4vmin;
+            margin-bottom: 1rem;
+        }
+
+        .about-section p {
+            font-size: 2.5vmin;
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+
+        .about-section a {
+            color: rgb(2, 71, 117);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1000px) {
+            .about-section {
+                width: 80%;
+                padding: 5%;
+                font-size: 3vmin;
+            }
+
+            .about-section h4 {
+                font-size: 3.5vmin;
+            }
+
+            .about-section p {
+                font-size: 2vmin;
+            }
+
+            #about-link,
+            #pro-link,
+            #con-link {
+                font-size: 0.8rem;
+                top: 10px;
+            }
+
+            #pro-link {
+                left: 100px;
+            }
+
+            #con-link {
+                left: 200px;
+            }
+
+            .section,
+            .section1 {
+                padding-left: 5%;
+                padding-right: 5%;
+                font-size: 6vmin;
+            }
+
+            #leftie p,
+            #leftie2 p {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                width: 90%;
+                font-size: 2.5vmin;
+            }
+
+            .about-section h4 {
+                font-size: 3vmin;
+            }
+
+            .about-section p {
+                font-size: 2vmin;
+            }
+
+            .section,
+            .section1 {
+                font-size: 5vmin;
+            }
+
+            #about-link,
+            #pro-link,
+            #con-link {
+                font-size: 0.7rem;
+            }
+
+            #pro-link {
+                left: 80px;
+            }
+
+            #con-link {
+                left: 160px;
+            }
+
+            #leftie p,
+            #leftie2 p {
+                font-size: 0.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-section {
+                padding: 5%;
+            }
+
+            #about-link,
+            #pro-link,
+            #con-link {
+                font-size: 0.6rem;
+            }
+
+            #pro-link {
+                left: 60px;
+            }
+
+            #con-link {
+                left: 120px;
+            }
+
+            .section,
+            .section1 {
+                font-size: 4vmin;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            #leftie p,
+            #leftie2 p {
+                font-size: 0.5rem;
+            }
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <!--<link rel="stylesheet" href="./style.css">-->
-    
-    
-  <script type="module" crossorigin src="./assets/index-6d8c02cb.js"></script>
+    <script type="module" crossorigin src="./assets/index-6d8c02cb.js"></script>
 </head>
 
 <body>
-    <a id="about-link" href="#about"></a>
-    <a id="pro-link" href="#pro"></a>
-    <a id="con-link" href="#con"></a>
-   
+    <a id="about-link" href="#about">About</a>
+    <a id="pro-link" href="#pro">Projects</a>
+    <a id="con-link" href="#con">Contact</a>
+
     <canvas class="webgl"></canvas>
-  
+
     <section class="section">
         <h1>Hi, I'm Suzana...</h1>
     </section>
     <section class="section1" id="pro">
         <div>
-        <h2>My Projects</h2>
-        
-        <br/>
-        <div id="leftie">
-        <a href="https://github.com/Su-z-ana/Nex"><img alt="3d art gallery" src="./assets/github (1)-10c53680.png" width="60" height="50"> </a><p style="color: white; font-size: 0.8rem; ">3d art gallery using Three.js</p>
-        <br/><a href="https://github.com/Su-z-ana/type-racer"><img alt="boat" src="./assets/github (1)-10c53680.png" width="60" height="50"> </a><p style="color: white; font-size: 0.8rem; ">Speed typing using js</p>
-    
-      <br/>
-        <a href="https://github.com/Su-z-ana/coin-rush/tree/main"><img alt="coin" src="./assets/github (1)-10c53680.png" width="60" height="50"></a><p style="color: white; font-size: 0.8rem;"> Boat game using Three.js</p>
-       <br/> <a href="https://github.com/Su-z-ana/Billiard/tree/main"><img alt="billiard" src="./assets/github (1)-10c53680.png" width="60" height="50"></a><p style="color: white; font-size: 0.8rem;"> Billiards using Unity</p>
-        <br/>
-        <a href="https://github.com/Su-z-ana/nexus-ecommerce"><img alt="ecom" src="./assets/github (1)-10c53680.png" width="60" height="50"></a><p style="color: white; font-size: 0.8rem;"> E-commerce website using React.js and Firebase</p>
+            <h2>My Projects</h2>
+            <br />
+            <div id="leftie">
+                <a href="https://github.com/Su-z-ana/Nex"><img alt="3d art gallery" src="./assets/github (1)-10c53680.png" width="60" height="50"></a>
+                <p>3D Art Gallery using Three.js</p>
 
-    </div>
-    </section>
-    <section class="section" id="con">
-        <div >
-            <br/>
-            <br/>
-        <h2>Contact me</h2>
-        
-        <br/>
-        <div id="leftie2">
-            <a href="mailto:suzanaruth24@gmail.com"><img alt="mail" src="./assets/email-ba448842.png" width="60" height="50"></a><p style="color: white; font-size: 1rem;">Mail me..</p>
-            <br/>
-            <p style="text-transform: lowercase; font-size: 1.5rem;">or feel free to reach me at</p>
-            <br/>
-            <a href="https://www.linkedin.com/in/suzana-ruth/"><img alt="linkedin" src="./assets/linkedin-7dcbc614.png" width="60" height="50"></a><p style="color: white; font-size: 1rem;">LinkedIn</p>
-            <br/>
-            <a href="https://github.com/Su-z-ana?tab=repositories"><img alt="git" src="./assets/github (1)-10c53680.png" width="60" height="50"></a><p style="color: white; font-size: 1rem;">GitHub</p>
+                <a href="https://github.com/Su-z-ana/type-racer"><img alt="boat" src="./assets/github (1)-10c53680.png" width="60" height="50"></a>
+                <p>Speed Typing using JS</p>
 
+                <a href="https://github.com/Su-z-ana/coin-rush/tree/main"><img alt="coin" src="./assets/github (1)-10c53680.png" width="60" height="50"></a>
+                <p>Boat Game using Three.js</p>
 
+                <a href="https://github.com/Su-z-ana/Billiard/tree/main"><img alt="billiard" src="./assets/github (1)-10c53680.png" width="60" height="50"></a>
+                <p>Billiards using Unity</p>
+
+                <a href="https://github.com/Su-z-ana/nexus-ecommerce"><img alt="ecom" src="./assets/github (1)-10c53680.png" width="60" height="50"></a>
+                <p>E-commerce Website using React.js and Firebase</p>
+            </div>
         </div>
-        </div> 
-        <br/>
-        <br/>
     </section>
-    
+
+    <section class="section" id="con">
+        <div>
+            <h2>Contact me</h2>
+            <br />
+            <div id="leftie2">
+                <a href="mailto:suzanaruth24@gmail.com"><img alt="mail" src="./assets/email-ba448842.png" width="60" height="50"></a>
+                <p>Mail me...</p>
+
+                <p style="text-transform: lowercase; font-size: 1.5rem;">or feel free to reach me at</p>
+
+                <a href="https://www.linkedin.com/in/suzana-ruth/"><img alt="linkedin" src="./assets/linkedin-7dcbc614.png" width="60" height="50"></a>
+                <p>LinkedIn</p>
+
+                <a href="https://github.com/Su-z-ana?tab=repositories"><img alt="git" src="./assets/github (1)-10c53680.png" width="60" height="50"></a>
+                <p>GitHub</p>
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="about-section">
-        
         <h4>About Me</h4>
-        <p>Hey there! My name is Suzana Ruth. I am a 3rd year Computer Science and Design student at Viswajyothi College of Engineering and Technology, Vazhakulam, Kerala.
-        <p> I am passionate about building next generation services using Three.js, React.js, Node.js, WebXR, Python and aiming to provide immersive, interactive and seamless realities in VR/AR, data analysis and Natural Language Processing.</p>
-        <p>This page is built using Three.js and GSAP to give a 3D interactive experience.
-            
-                </p>
+        <p>Hey there! My name is Suzana Ruth. I am a 4th year Computer Science and Design student at Viswajyothi College of Engineering and Technology, Vazhakulam, Kerala.</p>
+        <p>I am passionate about building next generation services using Three.js, React.js, Node.js, WebXR, Python and aiming to provide immersive, interactive and seamless realities in VR/AR, data analysis and Natural Language Processing.</p>
+        <p>This page is built using Three.js and GSAP to give a 3D interactive experience.</p>
         <p>Thank you for visiting.</p>
     </section>
-  
-    
 </body>
 
 </html>
-
